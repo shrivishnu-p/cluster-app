@@ -15,7 +15,7 @@ import plotly.graph_objs as go
 
 st.title('Country Clusters')
 
-country = pd.read_csv(r'C:\Users\DELL PC\PythonFiles\Machine Learning\Clustering\Assignment\Country-data.csv')
+country = pd.read_csv('./Country-data.csv')
 
 def df_attr(df):
     count = df.count()
