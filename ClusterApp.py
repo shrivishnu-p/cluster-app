@@ -27,8 +27,7 @@ def df_attr(df):
     return pd.concat([count, null, null_perc, unique, types, desc], axis = 1,
                      keys=['COUNT','NULL','PERCENT','NUM_UNIQUE','DATATYPE'])
 
-d = {
-    'child_mort':'Child Mortality',
+d = {'child_mort':'Child Mortality',
     'exports':'Exports',
     'imports':'Imports',
     'health':'Health expenses',
@@ -36,8 +35,7 @@ d = {
     'inflation':'Inflation',
     'life_expec':'Life expectancy',
     'total_fer':'Fertility rate',
-    'gdpp':'GDP per capita'
-    }
+    'gdpp':'GDP per capita'}
 
 # Changing the relative values to absolute values
 country['exports'] = country['exports']*country['gdpp']/100
@@ -135,8 +133,8 @@ elif clus == 'Hierarchical':
         return merg
 
     merg = hier(df_scaled, link)
-    dendrogram(merg)
-    st.pyplot(use_container_width=True)
+    fig = dendrogram(merg)
+    st.pyplot(fig, use_container_width=True)
 
     st.sidebar.markdown('#### Select the number of clusters')
     n = st.sidebar.number_input('Select n clusters', 2, 10, value=2)
