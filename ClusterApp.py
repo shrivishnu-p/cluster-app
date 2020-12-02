@@ -13,6 +13,8 @@ from scipy.cluster.hierarchy import cut_tree
 import plotly as py
 import plotly.graph_objs as go
 
+st.set_option('deprecation.showPyplotGlobalUse', False)
+
 st.title('Country Clusters')
 
 country = pd.read_csv('./Country-data.csv')
