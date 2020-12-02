@@ -137,6 +137,7 @@ elif clus == 'Hierarchical':
     merg = hier(df_scaled, link)
     dendrogram(merg)
     st.pyplot(use_container_width=True)
+    plt.xlabel(None)
 
     st.sidebar.markdown('#### Select the number of clusters')
     n = st.sidebar.number_input('Select n clusters', 2, 10, value=2)
